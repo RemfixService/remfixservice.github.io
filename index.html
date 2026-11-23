@@ -7,11 +7,28 @@
 <div class="card"><h3>Смартфоны</h3><p>Замена дисплеев и аккумуляторов, ремонт разъёмов и компонентов.</p></div><div class="card"><h3>Планшеты</h3><p>Диагностика, замена экранов и аккумуляторов.</p></div><div class="card"><h3>Компьютеры</h3><p>Диагностика, настройка, обслуживание и ремонт.</p></div><div class="card"><h3>Ноутбуки</h3><p>Обслуживание системы охлаждения и ремонт компонентов.</p></div><div class="card"><h3>Пайка компонентов</h3><p>Работа с электронными компонентами и платами.</p></div><div class="card"><h3>Чистка техники</h3><p>Удаление пыли и профилактика перегрева.</p></div></div></div></section>
 <section class="dark" id="prices"><div class="wrap"><div class="head"><div class="kicker">Прайс-лист</div><h2>Ориентировочная стоимость</h2><p>Цена зависит от модели устройства, запчастей и характера неисправности.</p></div><div class="prices">
 <div class="row"><span>Диагностика</span><b>Уточняйте</b></div><div class="row"><span>Замена дисплея</span><b>От — ₽</b></div><div class="row"><span>Замена аккумулятора</span><b>От — ₽</b></div><div class="row"><span>Замена разъёма зарядки</span><b>От — ₽</b></div><div class="row"><span>Ремонт после влаги</span><b>После диагностики</b></div><div class="row"><span>Чистка компьютера</span><b>От — ₽</b></div><div class="row"><span>Пайка компонентов</span><b>После диагностики</b></div><div class="row"><span>Обслуживание ноутбука</span><b>От — ₽</b></div></div><p class="muted">Вместо «От — ₽» нужно вписать реальные цены перед рекламой сайта.</p></div></section>
-<section id="request" class="dark"><div class="wrap"><div class="head"><div class="kicker">Запись на ремонт</div><h2>Оставить заявку</h2><p>Заполните форму — WhatsApp откроется с подготовленным сообщением.</p></div><div class="box"><form id="f" class="form">
+<section id="request" class="dark"><div class="wrap"><div class="head"><div class="kicker">Запись на ремонт</div><h2>Оставить заявку</h2><p>Заполните форму, скопируйте текст заявки и отправьте его нам через ВКонтакте или MAX.</p></div><div class="box"><form id="f" class="form">
 <div><label for="n">Ваше имя</label><input id="n" required placeholder="Имя"></div><div><label for="p">Номер телефона</label><input id="p" type="tel" required placeholder="+7 ___ ___-__-__"></div>
 <div><label for="d">Тип устройства</label><select id="d"><option>Смартфон</option><option>Планшет</option><option>Ноутбук</option><option>Компьютер</option><option>Другое</option></select></div><div><label for="m">Модель</label><input id="m" placeholder="Модель устройства"></div>
-<div class="full"><label for="problem">Опишите неисправность</label><textarea id="problem" required placeholder="Что случилось с устройством?"></textarea></div><div class="full"><button class="btn" type="submit">Отправить заявку в WhatsApp</button></div></form><p class="muted">После открытия WhatsApp проверьте сообщение и нажмите «Отправить». Форма использует номер REMFIX 8 999 747-74-04.</p></div></div></section>
+<div class="full"><label for="problem">Опишите неисправность</label><textarea id="problem" required placeholder="Что случилось с устройством?"></textarea></div><div class="full"><button class="btn" type="submit">Подготовить заявку</button></div></form><p class="muted">После подготовки заявки скопируйте текст и отправьте его в выбранный мессенджер. <div id="requestResult" style="display:none;margin-top:16px"><textarea id="requestText" readonly style="min-height:140px"></textarea><p style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="button" id="copyRequest">Скопировать текст</button><a class="btn" href="https://vk.ru/club235225945" target="_blank" rel="noopener">Открыть ВКонтакте</a><a class="btn" href="https://max.ru/u/f9LHodD0cOKT4J7ppAXQpbL2L_KZ8kdV03hy2MM78gNNBAt6ui8qbZ_GY74" target="_blank" rel="noopener">Открыть MAX</a></p></div></p></div></div></section>
 <section id="contacts"><div class="wrap"><div class="head"><div class="kicker">Мы на связи</div><h2>Контакты</h2></div><div class="box"><div class="contact">8 999 747-74-04</div><p class="muted">Адреса филиалов добавим отдельно по мере расширения компании.</p><a class="btn" href="tel:+79997477404">Позвонить</a></div></div></section>
 <footer><div class="wrap">© 2026 REMFIX. Все права защищены.</div></footer>
-<script>document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();let msg='Заявка REMFIX\nИмя: '+n.value+'\nТелефон: '+p.value+'\nУстройство: '+d.value+'\nМодель: '+m.value+'\nНеисправность: '+problem.value;window.open('https://wa.me/79997477404?text='+encodeURIComponent(msg),'_blank')});</script>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ const msg='Заявка REMFIX\nИмя: '+document.getElementById('n').value+
+ '\nТелефон: '+document.getElementById('p').value+
+ '\nУстройство: '+document.getElementById('d').value+
+ '\nМодель: '+document.getElementById('m').value+
+ '\nНеисправность: '+document.getElementById('problem').value;
+ document.getElementById('requestText').value=msg;
+ document.getElementById('requestResult').style.display='block';
+ document.getElementById('requestResult').scrollIntoView({behavior:'smooth',block:'center'});
+});
+document.getElementById('copyRequest').addEventListener('click',async function(){
+ const field=document.getElementById('requestText');
+ try { await navigator.clipboard.writeText(field.value); this.textContent='Скопировано!'; }
+ catch(e) { field.select(); document.execCommand('copy'); this.textContent='Скопировано!'; }
+});
+</script>
 </body></html>
