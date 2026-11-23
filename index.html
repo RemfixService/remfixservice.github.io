@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>REMFIX — ремонт техники</title>
+<meta name="description" content="REMFIX — ремонт смартфонов, планшетов, компьютеров и ноутбуков. Профессиональный подход к ремонту техники.">
+<style>
+:root{--bg:#101010;--panel:#191919;--panel2:#202020;--orange:#ff7900;--white:#f5f5f5;--muted:#aaa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#101010ed;border-bottom:1px solid #292929;backdrop-filter:blur(10px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:30px;font-weight:900;letter-spacing:2px}.logo span{color:var(--orange)}
+nav{display:flex;gap:26px;color:#ddd;font-size:14px}nav a:hover{color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:8px;background:var(--orange);color:#111;font-weight:800;border:0;cursor:pointer;transition:.2s}
+.btn:hover{background:#ff9638;transform:translateY(-2px)}.btn.outline{background:transparent;border:1px solid #555;color:white}.btn.outline:hover{border-color:var(--orange);color:var(--orange)}
+.hero{padding:88px 0 82px;overflow:hidden;position:relative;background:radial-gradient(ellipse at 80% 35%,#492307 0,transparent 38%),linear-gradient(120deg,#101010,#17120e)}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ff790033;border-radius:50%;right:7%;top:50px;box-shadow:0 0 0 35px #ff79000b,0 0 0 75px #ff790008}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px;position:relative;z-index:1}
+.kicker{color:var(--orange);font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:18px 0;letter-spacing:-2px}h1 span{color:var(--orange)}
+.lead{color:#c5c5c5;font-size:18px;max-width:560px;margin-bottom:30px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+.visual{min-height:330px;border:1px solid #ffffff18;border-radius:22px;background:linear-gradient(145deg,#252525,#111);display:grid;place-items:center;position:relative;overflow:hidden}
+.visual:before,.visual:after{content:"";position:absolute;border:1px solid #ff790066;border-radius:50%;width:250px;height:250px}
+.visual:after{width:190px;height:190px}
+.chip{position:relative;z-index:1;width:140px;height:140px;border:2px solid var(--orange);border-radius:26px;display:grid;place-items:center;transform:rotate(-8deg);box-shadow:0 0 55px #ff790033}
+.chip b{font-size:44px;color:var(--orange);letter-spacing:-3px}
+section{padding:76px 0}.section-head{text-align:center;margin:0 auto 38px;max-width:650px}.section-head h2{font-size:36px;margin:8px 0}.section-head p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid #2a2a2a;border-radius:14px;padding:25px;min-height:190px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#a94f0b}.icon{width:45px;height:45px;border-radius:12px;background:#ff79001c;color:var(--orange);display:grid;place-items:center;font-size:23px;margin-bottom:16px}
+.card h3{margin:0 0 8px;font-size:19px}.card p{color:var(--muted);margin:0;font-size:14px}
+.why{background:#151515}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.why-item{padding:12px 4px}.why-item strong{display:block;font-size:18px;margin:10px 0 5px}.why-item p{color:var(--muted);font-size:14px;margin:0}
+.cta{background:linear-gradient(110deg,#281506,#17110c);border:1px solid #60300d;border-radius:20px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-size:32px;margin:0 0 8px}.cta p{margin:0;color:#c2b7ad}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.contact-box{background:var(--panel);border:1px solid #2a2a2a;border-radius:14px;padding:26px}.contact-box p{color:var(--muted);margin:7px 0 18px}.phone{font-size:26px;font-weight:800;color:var(--orange)}
+footer{border-top:1px solid #292929;padding:25px 0;color:#888;font-size:13px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:760px){nav{display:none}.hero{padding:65px 0}.hero-grid,.contacts{grid-template-columns:1fr}.visual{min-height:240px}.cards{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}.section-head h2{font-size:30px}}
+@media(max-width:460px){.cards{grid-template-columns:1fr}.logo{font-size:26px}.hero h1{font-size:45px}.cta{padding:28px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">REM<span>FIX</span></a>
+    <nav><a href="#services">Услуги</a><a href="#about">О нас</a><a href="#contacts">Контакты</a></nav>
+    <a class="btn" href="tel:+79997477404">Позвонить</a>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Сервис и ремонт техники</div>
+        <h1>Техника снова<br><span>в строю.</span></h1>
+        <p class="lead">REMFIX — ремонт смартфонов, планшетов, компьютеров и ноутбуков. Внимательно относимся к каждой неисправности и подбираем оптимальное решение.</p>
+        <div class="actions">
+          <a class="btn" href="#contacts">Оставить заявку</a>
+          <a class="btn outline" href="#services">Наши услуги</a>
+        </div>
+      </div>
+      <div class="visual" aria-label="Фирменная графика REMFIX"><div class="chip"><b>RF</b></div></div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Что мы ремонтируем</div><h2>Услуги REMFIX</h2><p>Помогаем вернуть технику к нормальной работе — от простой замены деталей до сложного ремонта.</p></div>
+      <div class="cards">
+        <article class="card"><div class="icon">▣</div><h3>Смартфоны</h3><p>Замена дисплеев и аккумуляторов, ремонт разъёмов, кнопок и других компонентов.</p></article>
+        <article class="card"><div class="icon">▤</div><h3>Планшеты</h3><p>Диагностика, замена экранов, аккумуляторов и устранение неисправностей.</p></article>
+        <article class="card"><div class="icon">⌘</div><h3>Компьютеры</h3><p>Диагностика, настройка, обслуживание и ремонт настольных компьютеров.</p></article>
+        <article class="card"><div class="icon">▱</div><h3>Ноутбуки</h3><p>Поиск неисправностей, обслуживание системы охлаждения и ремонт компонентов.</p></article>
+        <article class="card"><div class="icon">⌁</div><h3>Пайка компонентов</h3><p>Работа с электронными компонентами и восстановление соединений на платах.</p></article>
+        <article class="card"><div class="icon">✦</div><h3>Чистка и обслуживание</h3><p>Удаление пыли, профилактика перегрева и комплексная диагностика техники.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Наш подход</div><h2>Почему REMFIX</h2><p>Наша задача — не просто устранить симптом, а разобраться в причине неисправности.</p></div>
+      <div class="why-grid">
+        <div class="why-item"><div class="icon">⌕</div><strong>Сначала диагностика</strong><p>Объясняем, что произошло с устройством и какие есть варианты ремонта.</p></div>
+        <div class="why-item"><div class="icon">◈</div><strong>Согласование стоимости</strong><p>Обсуждаем объём работ и стоимость до начала ремонта.</p></div>
+        <div class="why-item"><div class="icon">✓</div><strong>Внимание к деталям</strong><p>Аккуратная работа с устройствами и проверка результата после ремонта.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="cta"><div><div class="kicker">Нужна помощь с техникой?</div><h2>Обсудим вашу проблему.</h2><p>Позвоните нам — расскажите, что случилось с устройством.</p></div><a class="btn" href="tel:+79997477404">Связаться с REMFIX</a></div></div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Мы на связи</div><h2>Контакты</h2><p>Свяжитесь с нами, чтобы уточнить возможность и стоимость ремонта.</p></div>
+      <div class="contacts">
+        <div class="contact-box"><div class="kicker">Телефон</div><a class="phone" href="tel:+79997477404">8 999 747-74-04</a><p>Нажмите на номер, чтобы позвонить.</p><a class="btn" href="tel:+79997477404">Позвонить</a></div>
+        <div class="contact-box"><div class="kicker">REMFIX</div><h3>Ремонт техники</h3><p>Адреса филиалов и график работы можно будет добавить сюда по мере расширения компании.</p><p>Сайт подготовлен как первая версия — перед публикацией стоит проверить телефон, услуги и условия обслуживания.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 REMFIX. Все права защищены.</span><span>Сервис и ремонт техники</span></div></footer>
+</body>
+</html>
