@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101010">
-<meta name="remfix-version" content="4.2">
+<meta name="remfix-version" content="4.3">
 <meta name="description" content="REMFIX — сервисный центр по ремонту смартфонов, планшетов, компьютеров и ноутбуков в Колышлее.">
 <title>REMFIX — сервисный центр</title>
 <style>
@@ -44,6 +44,9 @@ section{padding:65px 0;scroll-margin-top:75px}
 .works{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .work{min-height:170px;border:1px dashed #555;border-radius:13px;background:linear-gradient(145deg,#202020,#141414);display:grid;place-items:center;text-align:center;padding:18px;color:#aaa}
 .work strong{display:block;color:var(--o);font-size:18px;margin-bottom:5px}
+.work-photo{width:100%;height:100%;min-height:220px;object-fit:cover;border-radius:12px;display:block}
+.hours{margin-top:18px;padding:16px 18px;background:#1b1b1b;border:1px solid #333;border-radius:10px}
+.hours strong{color:var(--o)}
 .form{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 label{display:block;font-size:14px;margin-bottom:6px}
 input,select,textarea{width:100%;padding:13px;background:#101010;color:white;border:1px solid #444;border-radius:8px;font:inherit}
@@ -90,6 +93,9 @@ footer{border-top:1px solid var(--line);padding:22px;color:#888;font-size:13px}
    <div class="card"><h3>Ноутбуки</h3><p>Обслуживание системы охлаждения и ремонт компонентов.</p></div>
    <div class="card"><h3>Пайка компонентов</h3><p>Работа с электронными компонентами и платами.</p></div>
    <div class="card"><h3>Восстановление после влаги</h3><p>Диагностика и восстановление устройств после попадания жидкости.</p></div>
+   <div class="card"><h3>Замена дисплея</h3><p>Замена разбитых, повреждённых и неисправных экранов смартфонов.</p></div>
+   <div class="card"><h3>Замена аккумулятора</h3><p>Замена изношенных батарей, если устройство быстро разряжается или не держит заряд.</p></div>
+   <div class="card"><h3>Ремонт разъёма зарядки</h3><p>Диагностика проблем с зарядкой и восстановление разъёма подключения.</p></div>
   </div>
  </div>
 </section>
@@ -112,11 +118,11 @@ footer{border-top:1px solid var(--line);padding:22px;color:#888;font-size:13px}
 
 <section id="works">
  <div class="wrap">
-  <div class="head"><div class="kicker">Результат нашей работы</div><h2>Наши работы</h2><p>Здесь будут реальные фотографии выполненных ремонтов.</p></div>
+  <div class="head"><div class="kicker">Примеры ремонта</div><h2>До и после</h2><p>Иллюстрация процесса замены дисплея. Фотография создана для оформления сайта, а не является реальным заказом клиента.</p></div>
   <div class="works">
-   <div class="work"><div><strong>Фото работы №1</strong>Добавьте фотографию ремонта</div></div>
-   <div class="work"><div><strong>Фото работы №2</strong>Добавьте фотографию ремонта</div></div>
-   <div class="work"><div><strong>Фото работы №3</strong>Добавьте фотографию ремонта</div></div>
+   <div class="work" style="padding:0;overflow:hidden"><img class="work-photo" src="images/display-before-after.png" alt="Пример: разбитый дисплей до ремонта и целый экран после ремонта"></div>
+   <div class="work"><div><strong>Замена аккумулятора</strong>Добавим фото после реального ремонта</div></div>
+   <div class="work"><div><strong>Ремонт разъёма</strong>Добавим фото после реального ремонта</div></div>
   </div>
  </div>
 </section>
@@ -139,7 +145,7 @@ footer{border-top:1px solid var(--line);padding:22px;color:#888;font-size:13px}
     <div><label for="device">Тип устройства *</label><select id="device" name="device" required><option value="Смартфон">Смартфон</option><option value="Планшет">Планшет</option><option value="Ноутбук">Ноутбук</option><option value="Компьютер">Компьютер</option><option value="Другое">Другое</option></select></div>
     <div><label for="model">Модель устройства</label><input id="model" name="model" maxlength="100" placeholder="Например, iPhone 13"></div>
     <div><label for="date">Желаемая дата визита *</label><input id="date" name="date" type="date" required></div>
-    <div><label for="time">Удобное время *</label><select id="time" name="time" required><option value="">Выберите время</option><option>09:00–11:00</option><option>11:00–13:00</option><option>13:00–15:00</option><option>15:00–17:00</option><option>17:00–19:00</option></select></div>
+    <div><label for="time">Удобное время *</label><select id="time" name="time" required><option value="">Выберите время</option><option>10:00–12:00</option><option>12:00–14:00</option><option>14:00–16:00</option><option>16:00–18:00</option><option>18:00–20:00</option></select></div>
     <div class="full"><label for="branch">Сервисный центр</label><select id="branch" name="branch"><option value="Колышлей — ул. Терешкина, стр. 16">Колышлей — ул. Терешкина, стр. 16</option></select></div>
     <div class="full"><label for="problem">Опишите неисправность *</label><textarea id="problem" name="problem" required maxlength="1500" placeholder="Что случилось с устройством?"></textarea></div>
     <div class="full checkline"><input id="consent" type="checkbox" required><label for="consent">Я согласен(на) на использование указанных данных для связи по этой заявке.</label></div>
@@ -158,6 +164,7 @@ footer{border-top:1px solid var(--line);padding:22px;color:#888;font-size:13px}
   <div class="box">
    <div class="contact">8 999 747-74-04</div>
    <p>Пензенская обл., р.п. Колышлей, ул. Терешкина, стр. 16</p>
+   <div class="hours"><strong>График работы</strong><br>Понедельник–пятница: 10:00–20:00<br>Суббота и воскресенье: выходные</div>
    <div class="contact-actions"><a class="btn" href="tel:+79997477404">Позвонить</a><a class="btn secondary" href="https://vk.ru/club235225945" target="_blank" rel="noopener">ВКонтакте</a><a class="btn secondary" href="https://max.ru/u/f9LHodD0cOKT4J7ppAXQpbL2L_KZ8kdV03hy2MM78gNNBAt6ui8qbZ_GY74" target="_blank" rel="noopener">MAX</a></div>
   </div>
  </div>
@@ -173,10 +180,13 @@ const dateInput = document.getElementById('date');
 const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().slice(0,10);
 dateInput.min = localToday;
+function isWeekend(dateString){ const d = new Date(dateString + 'T12:00:00'); return d.getDay() === 0 || d.getDay() === 6; }
+dateInput.addEventListener('change', function(){ if(this.value && isWeekend(this.value)){ this.setCustomValidity('Сервисный центр не работает по субботам и воскресеньям. Выберите будний день.'); this.reportValidity(); this.value=''; } else { this.setCustomValidity(''); } });
 
 form.addEventListener('submit', async function(e){
  e.preventDefault();
  if(!form.reportValidity()) return;
+ if(isWeekend(dateInput.value)){ dateInput.setCustomValidity('Выберите будний день: понедельник–пятница.'); dateInput.reportValidity(); return; }
  const data = {
   name: document.getElementById('name').value.trim(),
   phone: document.getElementById('phone').value.trim(),
