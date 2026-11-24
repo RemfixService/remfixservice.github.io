@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101010">
+<meta name="remfix-version" content="4.2">
 <meta name="description" content="REMFIX — сервисный центр по ремонту смартфонов, планшетов, компьютеров и ноутбуков в Колышлее.">
 <title>REMFIX — сервисный центр</title>
 <style>
@@ -146,13 +147,6 @@ footer{border-top:1px solid var(--line);padding:22px;color:#888;font-size:13px}
    </form>
    <div class="result" id="result">
     <div class="status" id="status" role="status" aria-live="polite"></div>
-    <label for="requestText">Текст вашей заявки (можно скопировать):</label>
-    <textarea id="requestText" readonly></textarea>
-    <div class="contact-actions">
-     <button class="btn secondary" type="button" id="copyRequest">Скопировать заявку</button>
-     <a class="btn" href="https://vk.ru/club235225945" target="_blank" rel="noopener">Открыть ВКонтакте</a>
-     <a class="btn secondary" href="https://max.ru/u/f9LHodD0cOKT4J7ppAXQpbL2L_KZ8kdV03hy2MM78gNNBAt6ui8qbZ_GY74" target="_blank" rel="noopener">Открыть MAX</a>
-    </div>
    </div>
   </div>
  </div>
@@ -175,7 +169,6 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLNCj0v0BRf6VOqauNx
 const form = document.getElementById('requestForm');
 const result = document.getElementById('result');
 const statusBox = document.getElementById('status');
-const requestText = document.getElementById('requestText');
 const dateInput = document.getElementById('date');
 const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().slice(0,10);
@@ -193,10 +186,6 @@ form.addEventListener('submit', async function(e){
   time: document.getElementById('time').value,
   branch: document.getElementById('branch').value
  };
- const message = 'Заявка REMFIX\\nИмя: '+data.name+'\\nТелефон: '+data.phone+
-  '\\nУстройство: '+data.device+'\\nНеисправность: '+data.problem+
-  '\\nДата визита: '+data.date+'\\nВремя: '+data.time+'\\nФилиал: '+data.branch;
- requestText.value = message;
  result.style.display = 'block';
  statusBox.textContent = 'Отправляем заявку…';
  const sendButton = document.getElementById('sendButton');
@@ -210,19 +199,15 @@ form.addEventListener('submit', async function(e){
    headers:{'Content-Type':'text/plain;charset=utf-8'},
    body:JSON.stringify(data)
   });
-  statusBox.textContent = 'Запрос отправлен. Поскольку Google Apps Script не возвращает браузеру подтверждение в этом режиме, проверьте, пожалуйста, что заявка появилась в чате REMFIX. На всякий случай ниже оставлен текст заявки для копирования.';
+  statusBox.textContent = 'Спасибо! Заявка отправлена. Мы свяжемся с вами.';
  } catch(err) {
-  statusBox.textContent = 'Не удалось подтвердить отправку. Скопируйте текст заявки ниже и отправьте его нам через ВКонтакте или MAX.';
+  statusBox.textContent = 'Не удалось отправить заявку. Попробуйте ещё раз или свяжитесь с нами по телефону.';
  }
  sendButton.disabled = false;
  sendButton.textContent = 'Отправить заявку';
  result.scrollIntoView({behavior:'smooth',block:'center'});
 });
 
-document.getElementById('copyRequest').addEventListener('click', async function(){
- try { await navigator.clipboard.writeText(requestText.value); this.textContent='Скопировано!'; }
- catch(e) { requestText.select(); document.execCommand('copy'); this.textContent='Скопировано!'; }
-});
 </script>
 </body>
 </html>
