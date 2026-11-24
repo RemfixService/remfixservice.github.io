@@ -1,44 +1,228 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101010"><title>REMFIX — ремонт техники</title><style>
-:root{--o:#ff7900;--bg:#101010;--panel:#1b1b1b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f5f5f5;font:16px Arial;line-height:1.55}a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}header{position:sticky;top:0;background:#101010ee;border-bottom:1px solid #333}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:28px;font-weight:900;letter-spacing:2px}.logo span,h1 span,.kicker,.price{color:var(--o)}nav{display:flex;gap:20px;font-size:14px}.btn{display:inline-block;background:var(--o);color:#111;padding:13px 20px;border:0;border-radius:8px;font-weight:bold;cursor:pointer}.hero{padding:75px 0;background:radial-gradient(ellipse at 80% 30%,#492307,transparent 40%)}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}h1{font-size:clamp(42px,6vw,68px);line-height:1.05;margin:15px 0}.lead{color:#bbb;font-size:18px}.visual{height:280px;border:1px solid #444;border-radius:22px;display:grid;place-items:center}.rf{border:2px solid var(--o);border-radius:25px;padding:35px;color:var(--o);font-size:45px;font-weight:bold;transform:rotate(-8deg)}section{padding:65px 0}.head{text-align:center;max-width:650px;margin:0 auto 30px}.head h2{font-size:34px;margin:8px}.head p,.muted{color:#aaa}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card,.box{background:var(--panel);border:1px solid #333;border-radius:13px;padding:22px}.card h3{margin:0 0 8px}.card p{color:#aaa;font-size:14px}.dark{background:#151515}.prices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row{background:var(--panel);border:1px solid #333;border-radius:9px;padding:14px;display:flex;justify-content:space-between;gap:10px}.row b{color:var(--o);white-space:nowrap}.form{display:grid;grid-template-columns:1fr 1fr;gap:13px}label{display:block;font-size:14px;margin-bottom:6px}input,select,textarea{width:100%;padding:13px;background:#101010;color:white;border:1px solid #444;border-radius:8px;font:inherit}textarea{min-height:100px}.full{grid-column:1/-1}.contact{font-size:25px;color:var(--o);font-weight:bold}footer{border-top:1px solid #333;padding:22px;color:#888;font-size:13px}@media(max-width:700px){nav{display:none}.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.prices{grid-template-columns:1fr}.form{grid-template-columns:1fr}.full{grid-column:auto}}@media(max-width:450px){.cards{grid-template-columns:1fr}}
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="REMFIX — сервисный центр по ремонту смартфонов, планшетов, компьютеров и ноутбуков в Колышлее.">
+<title>REMFIX — сервисный центр</title>
+<style>
+:root{--o:#ff7900;--bg:#101010;--panel:#1b1b1b;--line:#333;--muted:#aaa}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#f5f5f5;font:16px Arial,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#101010ee;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-size:28px;font-weight:900;letter-spacing:2px}
+.logo span,h1 span,.kicker,.price{color:var(--o)}
+nav{display:flex;gap:18px;font-size:14px}
+nav a:hover{color:var(--o)}
+.btn{display:inline-block;background:var(--o);color:#111;padding:13px 20px;border:0;border-radius:8px;font-weight:bold;cursor:pointer;font-size:15px}
+.btn:hover{filter:brightness(1.08)}
+.btn.secondary{background:transparent;color:var(--o);border:1px solid var(--o)}
+.hero{padding:76px 0;background:radial-gradient(ellipse at 80% 30%,#492307,transparent 42%)}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+h1{font-size:clamp(42px,6vw,68px);line-height:1.05;margin:15px 0}
+.lead{color:#bbb;font-size:18px}
+.visual{height:280px;border:1px solid #444;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#191919,#111)}
+.rf{border:2px solid var(--o);border-radius:25px;padding:35px;color:var(--o);font-size:45px;font-weight:bold;transform:rotate(-8deg);box-shadow:0 0 35px #ff790022}
+section{padding:65px 0;scroll-margin-top:75px}
+.head{text-align:center;max-width:680px;margin:0 auto 30px}
+.head h2{font-size:34px;margin:8px}
+.head p,.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card,.box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:22px}
+.card h3{margin:0 0 8px}
+.card p{color:#aaa;font-size:14px;margin-bottom:0}
+.dark{background:#151515}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px;display:flex;justify-content:space-between;gap:10px}
+.row b{color:var(--o);white-space:nowrap}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.work{min-height:170px;border:1px dashed #555;border-radius:13px;background:linear-gradient(145deg,#202020,#141414);display:grid;place-items:center;text-align:center;padding:18px;color:#aaa}
+.work strong{display:block;color:var(--o);font-size:18px;margin-bottom:5px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+label{display:block;font-size:14px;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px;background:#101010;color:white;border:1px solid #444;border-radius:8px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--o);border-color:var(--o)}
+textarea{min-height:100px;resize:vertical}
+.full{grid-column:1/-1}
+.checkline{display:flex;align-items:flex-start;gap:10px;color:#aaa;font-size:13px}
+.checkline input{width:auto;margin-top:4px}
+.result{display:none;margin-top:18px}
+.status{padding:12px;border-radius:8px;background:#222;color:#ddd;margin:12px 0}
+.contact{font-size:25px;color:var(--o);font-weight:bold}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:22px;color:#888;font-size:13px}
+@media(max-width:700px){nav{display:none}.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.prices,.works{grid-template-columns:1fr 1fr}.form{grid-template-columns:1fr}.full{grid-column:auto}}
+@media(max-width:450px){.cards,.works,.prices{grid-template-columns:1fr}.hero{padding:55px 0}.visual{height:210px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#">REM<span>FIX</span></a>
+  <nav><a href="#services">Услуги</a><a href="#prices">Цены</a><a href="#works">Наши работы</a><a href="#request">Запись</a><a href="#contacts">Контакты</a></nav>
+  <a class="btn" href="tel:+79997477404">Позвонить</a>
+ </div>
+</header>
 
-.work-card{overflow:hidden;padding:0}.work-photo{min-height:165px;display:grid;place-items:center;background:linear-gradient(135deg,#292929,#171717);border-bottom:1px solid #444;color:var(--o);font-size:42px;font-weight:900;letter-spacing:2px}.work-copy{padding:18px}.work-copy p{margin:6px 0 0}.review-empty{text-align:center;max-width:720px;margin:auto}.review-mark{font-size:42px;color:var(--o);font-weight:900}.review-empty .btn{margin-top:12px}.note{font-size:13px;color:#888}
-</style></head><body>
-<header><div class="wrap nav"><a class="logo" href="#">REM<span>FIX</span></a><nav><a href="#services">Услуги</a><a href="#prices">Цены</a><a href="#works">Наши работы</a><a href="#reviews">Отзывы</a><a href="#request">Заявка</a><a href="#contacts">Контакты</a></nav><a class="btn" href="tel:+79997477404">Позвонить</a></div></header>
-<section class="hero"><div class="wrap grid"><div><div class="kicker">Сервис и ремонт техники</div><h1>Техника снова<br><span>в строю.</span></h1><p class="lead">REMFIX — ремонт смартфонов, планшетов, компьютеров и ноутбуков. Диагностика, ремонт и обслуживание техники.</p><a class="btn" href="#request">Оставить заявку</a></div><div class="visual"><div class="rf">RF</div></div></div></section>
-<section id="services"><div class="wrap"><div class="head"><div class="kicker">Что мы ремонтируем</div><h2>Услуги REMFIX</h2><p>Помогаем вернуть технику к нормальной работе.</p></div><div class="cards">
-<div class="card"><h3>Смартфоны</h3><p>Замена дисплеев и аккумуляторов, ремонт разъёмов и компонентов.</p></div><div class="card"><h3>Планшеты</h3><p>Диагностика, замена экранов и аккумуляторов.</p></div><div class="card"><h3>Компьютеры</h3><p>Диагностика, настройка, обслуживание и ремонт.</p></div><div class="card"><h3>Ноутбуки</h3><p>Обслуживание системы охлаждения и ремонт компонентов.</p></div><div class="card"><h3>Пайка компонентов</h3><p>Работа с электронными компонентами и платами.</p></div><div class="card"><h3>Чистка техники</h3><p>Удаление пыли и профилактика перегрева.</p></div></div></div></section>
-<section class="dark" id="prices"><div class="wrap"><div class="head"><div class="kicker">Прайс-лист</div><h2>Ориентировочная стоимость</h2><p>Цена зависит от модели устройства, запчастей и характера неисправности.</p></div><div class="prices">
-<div class="row"><span>Диагностика</span><b>Уточняйте</b></div><div class="row"><span>Замена дисплея</span><b>От — ₽</b></div><div class="row"><span>Замена аккумулятора</span><b>От — ₽</b></div><div class="row"><span>Замена разъёма зарядки</span><b>От — ₽</b></div><div class="row"><span>Ремонт после влаги</span><b>После диагностики</b></div><div class="row"><span>Чистка компьютера</span><b>От — ₽</b></div><div class="row"><span>Пайка компонентов</span><b>После диагностики</b></div><div class="row"><span>Обслуживание ноутбука</span><b>От — ₽</b></div></div><p class="muted">Вместо «От — ₽» нужно вписать реальные цены перед рекламой сайта.</p></div></section>
+<section class="hero">
+ <div class="wrap grid">
+  <div><div class="kicker">Сервисный центр</div><h1>Техника снова<br><span>в строю.</span></h1>
+   <p class="lead">REMFIX — ремонт смартфонов, планшетов, компьютеров и ноутбуков. Диагностика, ремонт и обслуживание техники в Колышлее.</p>
+   <a class="btn" href="#request">Записаться на ремонт</a>
+  </div>
+  <div class="visual"><div class="rf">REMFIX</div></div>
+ </div>
+</section>
 
-<section id="works"><div class="wrap"><div class="head"><div class="kicker">Практика и опыт</div><h2>Наши работы</h2><p>Здесь будут фотографии реальных ремонтов REMFIX — с описанием неисправности и выполненной работы.</p></div>
-<div class="cards">
-<div class="card work-card"><div class="work-photo">ФОТО 01</div><div class="work-copy"><h3>Замена дисплея</h3><p class="muted">Добавьте фото устройства до и после ремонта.</p></div></div>
-<div class="card work-card"><div class="work-photo">ФОТО 02</div><div class="work-copy"><h3>Ремонт разъёма</h3><p class="muted">Добавьте фотографию выполненной работы.</p></div></div>
-<div class="card work-card"><div class="work-photo">ФОТО 03</div><div class="work-copy"><h3>Обслуживание компьютера</h3><p class="muted">Добавьте фото процесса или результата.</p></div></div>
-</div><p class="note" style="text-align:center;margin-top:16px">Это макеты для будущих фотографий, а не изображения завершённых заказов.</p></div></section>
-<section id="reviews" class="dark"><div class="wrap"><div class="head"><div class="kicker">Мнение клиентов</div><h2>Отзывы</h2></div><div class="box review-empty"><div class="review-mark">REMFIX</div><h3>Здесь будут отзывы клиентов</h3><p class="muted">Добавим реальные отзывы с разрешения авторов. Не публикуем вымышленные оценки и комментарии.</p><a class="btn" href="https://vk.ru/club235225945" target="_blank" rel="noopener">Перейти в нашу группу ВКонтакте</a></div></div></section>
-<section id="request" class="dark"><div class="wrap"><div class="head"><div class="kicker">Запись на ремонт</div><h2>Оставить заявку</h2><p>Заполните форму, скопируйте текст заявки и отправьте его нам через ВКонтакте или MAX.</p></div><div class="box"><form id="f" class="form">
-<div><label for="n">Ваше имя</label><input id="n" required placeholder="Имя"></div><div><label for="p">Номер телефона</label><input id="p" type="tel" required placeholder="+7 ___ ___-__-__"></div>
-<div><label for="d">Тип устройства</label><select id="d"><option>Смартфон</option><option>Планшет</option><option>Ноутбук</option><option>Компьютер</option><option>Другое</option></select></div><div><label for="m">Модель</label><input id="m" placeholder="Модель устройства"></div>
-<div class="full"><label for="problem">Опишите неисправность</label><textarea id="problem" required placeholder="Что случилось с устройством?"></textarea></div><div class="full"><button class="btn" type="submit">Подготовить заявку</button></div></form><p class="muted">После подготовки заявки скопируйте текст и отправьте его в выбранный мессенджер. <div id="requestResult" style="display:none;margin-top:16px"><textarea id="requestText" readonly style="min-height:140px"></textarea><p style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="button" id="copyRequest">Скопировать текст</button><a class="btn" href="https://vk.ru/club235225945" target="_blank" rel="noopener">Открыть ВКонтакте</a><a class="btn" href="https://max.ru/u/f9LHodD0cOKT4J7ppAXQpbL2L_KZ8kdV03hy2MM78gNNBAt6ui8qbZ_GY74" target="_blank" rel="noopener">Открыть MAX</a></p></div></p></div></div></section>
-<section id="contacts"><div class="wrap"><div class="head"><div class="kicker">Мы на связи</div><h2>Контакты</h2></div><div class="box"><div class="contact">8 999 747-74-04</div><p class="muted">Адреса филиалов добавим отдельно по мере расширения компании.</p><a class="btn" href="tel:+79997477404">Позвонить</a></div></div></section>
-<footer><div class="wrap">© 2026 REMFIX. Все права защищены.</div></footer>
+<section id="services">
+ <div class="wrap">
+  <div class="head"><div class="kicker">Что мы ремонтируем</div><h2>Услуги REMFIX</h2><p>Помогаем вернуть технику к нормальной работе.</p></div>
+  <div class="cards">
+   <div class="card"><h3>Смартфоны</h3><p>Замена дисплеев и аккумуляторов, ремонт разъёмов и компонентов.</p></div>
+   <div class="card"><h3>Планшеты</h3><p>Диагностика, замена экранов и аккумуляторов.</p></div>
+   <div class="card"><h3>Компьютеры</h3><p>Диагностика, настройка, обслуживание и ремонт.</p></div>
+   <div class="card"><h3>Ноутбуки</h3><p>Обслуживание системы охлаждения и ремонт компонентов.</p></div>
+   <div class="card"><h3>Пайка компонентов</h3><p>Работа с электронными компонентами и платами.</p></div>
+   <div class="card"><h3>Восстановление после влаги</h3><p>Диагностика и восстановление устройств после попадания жидкости.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="dark" id="prices">
+ <div class="wrap">
+  <div class="head"><div class="kicker">Прайс-лист</div><h2>Ориентировочная стоимость</h2><p>Итоговая цена зависит от модели устройства, запчастей и характера неисправности.</p></div>
+  <div class="prices">
+   <div class="row"><span>Диагностика</span><b>От 990 ₽</b></div>
+   <div class="row"><span>Замена дисплея</span><b>По запросу</b></div>
+   <div class="row"><span>Замена аккумулятора</span><b>По запросу</b></div>
+   <div class="row"><span>Замена разъёма зарядки</span><b>По запросу</b></div>
+   <div class="row"><span>Ремонт после влаги</span><b>После диагностики</b></div>
+   <div class="row"><span>Чистка компьютера</span><b>По запросу</b></div>
+   <div class="row"><span>Пайка компонентов</span><b>После диагностики</b></div>
+   <div class="row"><span>Обслуживание ноутбука</span><b>По запросу</b></div>
+  </div>
+ </div>
+</section>
+
+<section id="works">
+ <div class="wrap">
+  <div class="head"><div class="kicker">Результат нашей работы</div><h2>Наши работы</h2><p>Здесь будут реальные фотографии выполненных ремонтов.</p></div>
+  <div class="works">
+   <div class="work"><div><strong>Фото работы №1</strong>Добавьте фотографию ремонта</div></div>
+   <div class="work"><div><strong>Фото работы №2</strong>Добавьте фотографию ремонта</div></div>
+   <div class="work"><div><strong>Фото работы №3</strong>Добавьте фотографию ремонта</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="dark" id="reviews">
+ <div class="wrap">
+  <div class="head"><div class="kicker">Мнение клиентов</div><h2>Отзывы</h2><p>Посмотрите отзывы и оставьте свой в нашей группе ВКонтакте.</p>
+   <a class="btn" href="https://vk.ru/club235225945" target="_blank" rel="noopener">Отзывы ВКонтакте</a>
+  </div>
+ </div>
+</section>
+
+<section id="request" class="dark">
+ <div class="wrap">
+  <div class="head"><div class="kicker">Запись на ремонт</div><h2>Оставить заявку</h2><p>Укажите данные устройства и удобное время визита. Заявка отправится в сервисный чат REMFIX.</p></div>
+  <div class="box">
+   <form id="requestForm" class="form">
+    <div><label for="name">Ваше имя *</label><input id="name" name="name" required maxlength="80" placeholder="Как к вам обращаться"></div>
+    <div><label for="phone">Номер телефона *</label><input id="phone" name="phone" type="tel" required maxlength="30" placeholder="+7 ___ ___-__-__"></div>
+    <div><label for="device">Тип устройства *</label><select id="device" name="device" required><option value="Смартфон">Смартфон</option><option value="Планшет">Планшет</option><option value="Ноутбук">Ноутбук</option><option value="Компьютер">Компьютер</option><option value="Другое">Другое</option></select></div>
+    <div><label for="model">Модель устройства</label><input id="model" name="model" maxlength="100" placeholder="Например, iPhone 13"></div>
+    <div><label for="date">Желаемая дата визита *</label><input id="date" name="date" type="date" required></div>
+    <div><label for="time">Удобное время *</label><select id="time" name="time" required><option value="">Выберите время</option><option>09:00–11:00</option><option>11:00–13:00</option><option>13:00–15:00</option><option>15:00–17:00</option><option>17:00–19:00</option></select></div>
+    <div class="full"><label for="branch">Сервисный центр</label><select id="branch" name="branch"><option value="Колышлей — ул. Терешкина, стр. 16">Колышлей — ул. Терешкина, стр. 16</option></select></div>
+    <div class="full"><label for="problem">Опишите неисправность *</label><textarea id="problem" name="problem" required maxlength="1500" placeholder="Что случилось с устройством?"></textarea></div>
+    <div class="full checkline"><input id="consent" type="checkbox" required><label for="consent">Я согласен(на) на использование указанных данных для связи по этой заявке.</label></div>
+    <div class="full"><button class="btn" id="sendButton" type="submit">Отправить заявку</button></div>
+   </form>
+   <div class="result" id="result">
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+    <label for="requestText">Текст вашей заявки (можно скопировать):</label>
+    <textarea id="requestText" readonly></textarea>
+    <div class="contact-actions">
+     <button class="btn secondary" type="button" id="copyRequest">Скопировать заявку</button>
+     <a class="btn" href="https://vk.ru/club235225945" target="_blank" rel="noopener">Открыть ВКонтакте</a>
+     <a class="btn secondary" href="https://max.ru/u/f9LHodD0cOKT4J7ppAXQpbL2L_KZ8kdV03hy2MM78gNNBAt6ui8qbZ_GY74" target="_blank" rel="noopener">Открыть MAX</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contacts">
+ <div class="wrap">
+  <div class="head"><div class="kicker">Мы на связи</div><h2>Контакты</h2></div>
+  <div class="box">
+   <div class="contact">8 999 747-74-04</div>
+   <p>Пензенская обл., р.п. Колышлей, ул. Терешкина, стр. 16</p>
+   <div class="contact-actions"><a class="btn" href="tel:+79997477404">Позвонить</a><a class="btn secondary" href="https://vk.ru/club235225945" target="_blank" rel="noopener">ВКонтакте</a><a class="btn secondary" href="https://max.ru/u/f9LHodD0cOKT4J7ppAXQpbL2L_KZ8kdV03hy2MM78gNNBAt6ui8qbZ_GY74" target="_blank" rel="noopener">MAX</a></div>
+  </div>
+ </div>
+</section>
+<footer><div class="wrap">© 2026 REMFIX. Сервисный центр по ремонту техники.</div></footer>
+
 <script>
-document.getElementById('f').addEventListener('submit',function(e){
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLNCj0v0BRf6VOqauNxHv1FDFfgL__gGepibk-Co-h3cNoZDYWv31S-n8lewlwQyP5/exec';
+const form = document.getElementById('requestForm');
+const result = document.getElementById('result');
+const statusBox = document.getElementById('status');
+const requestText = document.getElementById('requestText');
+const dateInput = document.getElementById('date');
+const today = new Date();
+const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+dateInput.min = localToday;
+
+form.addEventListener('submit', async function(e){
  e.preventDefault();
- const msg='Заявка REMFIX\nИмя: '+document.getElementById('n').value+
- '\nТелефон: '+document.getElementById('p').value+
- '\nУстройство: '+document.getElementById('d').value+
- '\nМодель: '+document.getElementById('m').value+
- '\nНеисправность: '+document.getElementById('problem').value;
- document.getElementById('requestText').value=msg;
- document.getElementById('requestResult').style.display='block';
- document.getElementById('requestResult').scrollIntoView({behavior:'smooth',block:'center'});
+ if(!form.reportValidity()) return;
+ const data = {
+  name: document.getElementById('name').value.trim(),
+  phone: document.getElementById('phone').value.trim(),
+  device: document.getElementById('device').value + (document.getElementById('model').value.trim() ? ' / ' + document.getElementById('model').value.trim() : ''),
+  problem: document.getElementById('problem').value.trim(),
+  date: document.getElementById('date').value,
+  time: document.getElementById('time').value,
+  branch: document.getElementById('branch').value
+ };
+ const message = 'Заявка REMFIX\\nИмя: '+data.name+'\\nТелефон: '+data.phone+
+  '\\nУстройство: '+data.device+'\\nНеисправность: '+data.problem+
+  '\\nДата визита: '+data.date+'\\nВремя: '+data.time+'\\nФилиал: '+data.branch;
+ requestText.value = message;
+ result.style.display = 'block';
+ statusBox.textContent = 'Отправляем заявку…';
+ const sendButton = document.getElementById('sendButton');
+ sendButton.disabled = true;
+ sendButton.textContent = 'Отправка…';
+ try {
+  // text/plain avoids a browser CORS preflight for this Apps Script endpoint.
+  await fetch(SCRIPT_URL, {
+   method:'POST',
+   mode:'no-cors',
+   headers:{'Content-Type':'text/plain;charset=utf-8'},
+   body:JSON.stringify(data)
+  });
+  statusBox.textContent = 'Запрос отправлен. Поскольку Google Apps Script не возвращает браузеру подтверждение в этом режиме, проверьте, пожалуйста, что заявка появилась в чате REMFIX. На всякий случай ниже оставлен текст заявки для копирования.';
+ } catch(err) {
+  statusBox.textContent = 'Не удалось подтвердить отправку. Скопируйте текст заявки ниже и отправьте его нам через ВКонтакте или MAX.';
+ }
+ sendButton.disabled = false;
+ sendButton.textContent = 'Отправить заявку';
+ result.scrollIntoView({behavior:'smooth',block:'center'});
 });
-document.getElementById('copyRequest').addEventListener('click',async function(){
- const field=document.getElementById('requestText');
- try { await navigator.clipboard.writeText(field.value); this.textContent='Скопировано!'; }
- catch(e) { field.select(); document.execCommand('copy'); this.textContent='Скопировано!'; }
+
+document.getElementById('copyRequest').addEventListener('click', async function(){
+ try { await navigator.clipboard.writeText(requestText.value); this.textContent='Скопировано!'; }
+ catch(e) { requestText.select(); document.execCommand('copy'); this.textContent='Скопировано!'; }
 });
 </script>
-</body></html>
+</body>
+</html>
